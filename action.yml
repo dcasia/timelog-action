@@ -1,0 +1,30 @@
+name: 'Git Time Tracker'
+description: 'Track time via git commits'
+author: 'Digital Creative'
+inputs:
+  durationFormatPattern:
+    required: false
+    description: 'also scan for time tags within the PR comments'
+    default: "h'h' m'm'"
+  template:
+    required: false
+    description: 'also scan for time tags within the PR body'
+  timezone:
+    required: false
+    default: 'Asia/Shanghai'
+  usersAliases:
+    required: false
+    description: 'also scan for time tags within the PR body'
+  masterTemplate:
+    required: false
+    description: 'also scan for time tags within the PR body'
+  token:
+    required: true
+    description: 'github secret token'
+    default: 'default value if applicable'
+  repositories:
+    required: true
+    description: 'depositories you want track'
+runs:
+  using: 'node12'
+  main: distribution/index.js
